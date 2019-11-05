@@ -13,7 +13,7 @@
 <th:block th:if="${message}">
     <p th:text="${message}"></p>
 </th:block>
-<form th:action="@{/edit-category}" th:object="${status}" method="post">
+<form th:action="@{/edit-status}" th:object="${status}" method="post">
     <input th:type="hidden" name="id" th:field="*{id}">
     <table>
         <tr>

@@ -22,7 +22,7 @@ public class CategoryRestController {
     @Autowired
     private CategoryService categoryService;
 
-    //-------------------Retrieve All Customers--------------------------------------------------------
+    //-------------------Retrieve All Categories----------------------------------------------------
 
     @RequestMapping(value = "/categories/", method = RequestMethod.GET)
     public ResponseEntity<List<Category>> listAllCategories() {
@@ -33,7 +33,7 @@ public class CategoryRestController {
         return new ResponseEntity<>(categories, HttpStatus.OK);
     }
 
-    //-------------------Retrieve Single Customer--------------------------------------------------------
+    //-------------------Retrieve Single category--------------------------------------------------------
 
     @RequestMapping(value = "/categories/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Category> getCategory(@PathVariable("id") long id) {
@@ -46,7 +46,7 @@ public class CategoryRestController {
         return new ResponseEntity<>(category, HttpStatus.OK);
     }
 
-    //-------------------Create a Customer--------------------------------------------------------
+    //-------------------Create a category--------------------------------------------------------
 
     @RequestMapping(value = "/categories/", method = RequestMethod.POST)
     public ResponseEntity<Void> createCustomer(@RequestBody Category category, UriComponentsBuilder ucBuilder) {
@@ -57,7 +57,7 @@ public class CategoryRestController {
         return new ResponseEntity<>(headers, HttpStatus.CREATED);
     }
 
-    //------------------- Update a Customer --------------------------------------------------------
+    //------------------- Update a category --------------------------------------------------------
 
     @RequestMapping(value = "/categories/{id}", method = RequestMethod.PUT)
     public ResponseEntity<Category> updateCategory(@PathVariable("id") long id, @RequestBody Category category) {
@@ -77,7 +77,7 @@ public class CategoryRestController {
         return new ResponseEntity<>(currentCategory, HttpStatus.OK);
     }
 
-    //------------------- Delete a Customer --------------------------------------------------------
+    //------------------- Delete a Category --------------------------------------------------------
 
     @RequestMapping(value = "/categories/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Category> deleteCategory(@PathVariable("id") long id) {

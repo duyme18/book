@@ -1,6 +1,8 @@
 package com.hdd.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,7 +15,6 @@ public class Book {
     private String author;
     private String publisher;
     private String code;
-
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
