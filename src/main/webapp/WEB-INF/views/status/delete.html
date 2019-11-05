@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete status</title>
+</head>
+<body>
+<h1>Delete status</h1>
+<h2>Are you sure?</h2>
+<p>
+    <a href="/statuses">Statuses list</a>
+</p>
+<form th:action="@{/delete-status}" th:object="${status}" method="post">
+    <input th:type="hidden" name="id" th:field="*{id}">
+    <table>
+        <tr>
+            <td>Status name:</td>
+            <td th:text="${status.name}"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Delete status"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
